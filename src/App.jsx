@@ -37,53 +37,74 @@ const App = () => {
 
       <main>
         <div className="container text-center my-5">
-          <div className="row">
+          <div className="row d-flex">
             <div className="col-12">
               <form action="" onSubmit={handleSubmit}>
 
-                <div>
-                  <label htmlFor="">Author</label>
+                {/* Author */}
+                <div className="form-floating mb-3">
                   <input
                     type="text"
-                    name='author'
+                    className="form-control"
+                    id="floatingAuthor"
+                    placeholder="Author"
+                    name="author"
                     value={formData.author}
                     onChange={handleChange}
                     required
                   />
+                  <label htmlFor="floatingAuthor">Author:</label>
                 </div>
 
-                <div>
-                  <label htmlFor="">Title</label>
+                {/* Title */}
+                <div className="form-floating mb-3">
                   <input
                     type="text"
-                    name='title'
+                    className="form-control"
+                    id="floatingTitle"
+                    placeholder="Title"
+                    name="title"
                     value={formData.title}
                     onChange={handleChange}
                     required
                   />
+                  <label htmlFor="floatingTitle">Title:</label>
                 </div>
 
-                <div>
-                  <label htmlFor="">Text</label>
+                {/* Body */}
+                <div className="form-floating mb-3">
                   <textarea
-                    name='body'
+                    className="form-control"
+                    id="floatingBody"
+                    placeholder="Body"
+                    name="body"
                     value={formData.body}
                     onChange={handleChange}
                     required
                   />
+                  <label htmlFor="floatingBody">Body:</label>
                 </div>
 
-                <div>
+                {/* Public */}
+                <div className="input-group-text mb-3 d-inline-block m-auto">
                   <input
                     type="checkbox"
-                    name='public'
+                    className='me-2'
+                    name="public"
                     value={formData.public}
                     onChange={handleChange}
                   /> Public
                 </div>
 
-                <button type='submit'>Send</button>
-
+                {/* Button */}
+                <div>
+                  <button
+                    type='submit'
+                    className='btn btn-primary'
+                  >
+                    Send
+                  </button>
+                </div>
               </form>
             </div>
           </div>
