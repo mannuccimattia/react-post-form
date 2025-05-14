@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
+import axios from 'axios';
 
 const App = () => {
   const [formData, setFormData] = useState({
     author: "",
     title: "",
-    description: "",
+    body: "",
     public: false
   });
 
@@ -21,7 +22,9 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    console.log(formData)
+    axios.post("https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts", formData).then(res => {
+      console.log(res.data)
+    })
   }
 
   return (
@@ -63,8 +66,8 @@ const App = () => {
                 <div>
                   <label htmlFor="">Text</label>
                   <textarea
-                    name='description'
-                    value={formData.description}
+                    name='body'
+                    value={formData.body}
                     onChange={handleChange}
                     required
                   />
